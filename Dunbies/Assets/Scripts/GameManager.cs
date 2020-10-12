@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
             if (Random.Range(0, 5) == 3)
             {
                 int randTemp = Random.Range(0, spawners.Length);
-                //spawners[randTemp].GetComponent<SpawnerScript>().SetWeapon(true);
+                spawners[randTemp].GetComponent<SpawnerScript>().SetWeapon(true);
             }
             foreach (GameObject spawner in spawners)
             {

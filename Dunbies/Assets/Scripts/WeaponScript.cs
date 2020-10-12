@@ -1,22 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class WeaponScript : MonoBehaviour
 {
     private bool swing = false;
-    int degree = 20;
-    private float weaponX = 0.3f;
+    int degree = 0;
     private float weaponY = -0.4f;
+    private float weaponX = 0.3f;
+    public Sprite[] upgrades;
+    private int spriteIndex = 0;
+    public float weaponPower = 1.0f;
 
     Vector3 pos;
     public GameObject player;
 
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space)) 
+        if (Input.GetKey(KeyCode.Space))
         {
             GetComponent<SpriteRenderer>().enabled = true;
             transform.GetChild(0).gameObject.SetActive(true);
@@ -26,10 +28,10 @@ public class WeaponScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (swing) 
+        if (swing)
         {
-            degree -= 5;
-            if (degree < -75) 
+            degree -= 7;
+            if (degree < -65)
             {
                 degree = 0;
                 swing = false;
@@ -40,14 +42,16 @@ public class WeaponScript : MonoBehaviour
         }
     }
 
-    void Attack() 
+    void Attack()
     {
-        if (player.GetComponent<Player>().turnedLeft)
+        if (player.GetComponent<PlayerScript>().turnedLeft)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            transform.localScale = new Vector3(-1.8f, 1.8f, 1);
             weaponX = -0.3f;
-        } else {
-            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else
+        {
+            transform.localScale = new Vector3(1.8f, 1.8f, 1);
             weaponX = 0.3f;
         }
         pos = player.transform.position;
@@ -56,4 +60,15 @@ public class WeaponScript : MonoBehaviour
         transform.position = pos;
         swing = true;
     }
+
+    public void UpgradeWeapon()
+    {
+        if (spriteIndex < upgrades.Length - 1)
+        {
+            spriteIndex++;
+        }
+        GetComponent<SpriteRenderer>().sprite = upgrades[spriteIndex];
+        weaponPower += 0.4f;
+    }
+
 }

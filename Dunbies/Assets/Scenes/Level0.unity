@@ -8972,7 +8972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &633172819
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8989,7 +8989,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00010681, y: -216}
+  m_AnchoredPosition: {x: -2, y: 340}
   m_SizeDelta: {x: 1920, y: 397.93744}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &633172820
@@ -9005,7 +9005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5660378, g: 0.096176445, b: 0.07742971, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -9043,10 +9043,10 @@ GameObject:
   m_Component:
   - component: {fileID: 737033246}
   - component: {fileID: 737033245}
-  - component: {fileID: 737033244}
   - component: {fileID: 737033243}
+  - component: {fileID: 737033244}
   m_Layer: 0
-  m_Name: Entrance
+  m_Name: DoorToLevel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9087,7 +9087,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 737033242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5230b4bbeeda6534a8a991d3d17ee67c, type: 3}
+  m_Script: {fileID: 11500000, guid: a32c0c9b621be2645a7d4b9df3577546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 145934497}
@@ -9263,6 +9263,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dbd7d09d776d024082353aeab112a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgrades:
+  - {fileID: 21300000, guid: a074f3ccec06e054e82dc9b8174e1e22, type: 3}
+  - {fileID: 21300000, guid: fc7a4a92481c81f46b2264f34c9a44b3, type: 3}
+  - {fileID: 21300000, guid: d88d45a90b7189b4c980cdf3d9b24f56, type: 3}
+  - {fileID: 21300000, guid: fe4bff664e9490f4bba6874fe1d19aea, type: 3}
+  weaponPower: 1
   player: {fileID: 1730756714}
 --- !u!212 &1068028899
 SpriteRenderer:
@@ -9467,7 +9473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1256973235
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21723,6 +21729,7 @@ MonoBehaviour:
   turnedLeft: 0
   healthFill: {fileID: 1210519026}
   mainText: {fileID: 633172820}
+  redOverlay: {fileID: 1256973236}
   expText: {fileID: 882974646}
 --- !u!212 &1730756717
 SpriteRenderer:
